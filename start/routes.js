@@ -14,5 +14,10 @@
 */
 
 const Route = use('Route')
+const User = use('App/Models/User')
 
 Route.post('/users','UserController.create')
+Route.post('/authenticate','UserController.authenticate')
+Route.get('/users', async() =>{
+  return await User.all()
+})
